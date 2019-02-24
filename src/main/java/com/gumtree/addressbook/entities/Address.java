@@ -11,6 +11,9 @@ public class Address extends Entity implements  Comparable<Address>{
     private String addressLine;
     private String postCode;
     private List<Address> addressBookRecords;
+    public Address(){
+        super();
+    }
 
     public Address(String firstName, String lastName, Gender gender, LocalDate dateOfBirth) {
         this.firstName = firstName;
