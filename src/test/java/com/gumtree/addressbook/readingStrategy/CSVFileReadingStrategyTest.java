@@ -31,6 +31,6 @@ public class CSVFileReadingStrategyTest {
     @Test
     public void shouldReturnTrueForCorrectFileExtension(){
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
-        assertTrue(csvReading.hasCorrectExtension("src/test/resources/addressBook.txt"));
+        assertTrue(csvReading.hasCorrectExtension("src/test/resources/addressBook.csv"));
     }
 }
