@@ -37,12 +37,9 @@ public class AddressBookServiceImpl implements AddressBookService {
 
     @Override
     public long getDaysOlder(String firstPersonName, String secondPersonName) {
-        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yy");
-
             LocalDate firstPersonDateOfBirth = getAddressfromName(firstPersonName).dateOfBirth;
             LocalDate secondPersonDateOfBirth = getAddressfromName(secondPersonName).dateOfBirth;
             long diff = ChronoUnit.DAYS.between(firstPersonDateOfBirth, secondPersonDateOfBirth);
-            System.out.println ("diff: " +diff);
         return diff;
     }
 
