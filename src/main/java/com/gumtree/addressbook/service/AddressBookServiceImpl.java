@@ -38,6 +38,11 @@ public class AddressBookServiceImpl implements AddressBookService {
 
     @Override
     public Address getOldestPersonAddress() {
-        return new Address();
+        return address.getAddressBookRecords().stream().min(Address::compareByDateOfBirth).get();
+    }
+
+    @Override
+    public Address getYoungestPersonAddress() {
+        return null;
     }
 }

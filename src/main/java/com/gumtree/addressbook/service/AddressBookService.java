@@ -13,4 +13,5 @@ public interface AddressBookService {
     long getDaysOlder(String firstPersonName, String secondPersonName);
 
     Address getOldestPersonAddress();
+    Address getYoungestPersonAddress();
 }
