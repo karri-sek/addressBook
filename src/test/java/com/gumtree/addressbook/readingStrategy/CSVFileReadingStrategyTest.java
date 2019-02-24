@@ -20,4 +20,17 @@ public class CSVFileReadingStrategyTest {
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
         assertFalse(csvReading.isFileExists("src/test/resources"));
     }
+
+    @Test
+    public void shouldReturnFalseForInCorrectFileExtension(){
+        CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
+        assertFalse(csvReading.hasCorrectExtension("src/test/resources/addressBook.txt"));
+    }
+
+
+    @Test
+    public void shouldReturnTrueForCorrectFileExtension(){
+        CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
+        assertTrue(csvReading.hasCorrectExtension("src/test/resources/addressBook.txt"));
+    }
 }

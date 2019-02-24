@@ -10,4 +10,8 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
         File inputFile = new File(path);
         return inputFile.exists() && inputFile.isFile();
     }
+    @Override
+    public boolean hasCorrectExtension(String path){
+        return false;
+    }
 }
