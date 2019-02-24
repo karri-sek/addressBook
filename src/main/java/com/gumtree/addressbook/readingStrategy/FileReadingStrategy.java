@@ -7,4 +7,5 @@ public interface FileReadingStrategy {
     boolean isFileExists(String path);
     boolean hasCorrectExtension(String path);
     long getCountOfLines(File file) throws IOException;
+    long mapFileLinesToEntities(File file);
 }

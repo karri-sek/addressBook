@@ -48,4 +48,9 @@ public class CSVFileReadingStrategyTest {
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
         csvReading.getCountOfLines(new File("src/test/resources/addressBook.dsv"));
     }
+    public void returnsFailedToMap() throws IOException {
+        CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
+        assertEquals(0,csvReading.mapFileLinesToEntities(new File("src/test/resources/addressBook.dsv")));
+    }
+
 }

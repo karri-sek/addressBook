@@ -23,4 +23,9 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
     public long getCountOfLines(File file) throws IOException {
        return Files.lines(file.toPath()).count();
     }
+
+    @Override
+    public long mapFileLinesToEntities(File file) {
+        return 0;
+    }
 }
