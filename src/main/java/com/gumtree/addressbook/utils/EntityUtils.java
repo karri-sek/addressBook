@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class EntityUtils {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
    public LocalDate getLocalDateFromString(String strDate){
-       return null;
+       return LocalDate.parse(strDate, formatter);
    }
 
 }

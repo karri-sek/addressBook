@@ -11,6 +11,6 @@ public class EntityUtilsTest {
     public void shouldReturnsLocalDateFromAStringDate(){
         EntityUtils entityUtils = new EntityUtils();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
-        assertEquals(LocalDate.parse("16/03/77",formatter), entityUtils.getLocalDateFromString("dd/mm/year"));
+        assertEquals(LocalDate.parse("16/03/77",formatter), entityUtils.getLocalDateFromString("16/03/77"));
     }
 }
