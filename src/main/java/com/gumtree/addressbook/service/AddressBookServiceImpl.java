@@ -43,6 +43,6 @@ public class AddressBookServiceImpl implements AddressBookService {
 
     @Override
     public Address getYoungestPersonAddress() {
-        return null;
+        return address.getAddressBookRecords().stream().max(Address::compareByDateOfBirth).get();
     }
 }
