@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
 
@@ -33,14 +34,13 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
     }
 
     @Override
-    public long mapFileLinesToEntities(File file) {
+    public  List<Entity> mapFileLinesToEntities(File file) {
         try {
-            List<Entity> listOfAddressBookRecords =  Files.lines(file.toPath()).map(line ->
+            return  Files.lines(file.toPath()).map(line ->
                     new EntityUtils().makeEntityFromFileLine(line, CSV_COLUMN_SEPARATOR, CSV_FIRST_LAST_NAME_SEPARATOR)).collect(toList());
-          return listOfAddressBookRecords.size();
         }catch (IOException ioe){
             System.out.println(ioe);
         }
-        return 0;
+        return null;
     }
 }
