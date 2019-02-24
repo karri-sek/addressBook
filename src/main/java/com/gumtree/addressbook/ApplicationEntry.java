@@ -31,5 +31,7 @@ public class ApplicationEntry {
 
     public void printAllCallsStatstics(){
         System.out.println("No of males from the addressBook:"+addressBookService.getMaleGenderCount());
+        System.out.println("No of Females from the addressBook:"+addressBookService.getFemaleGenderCount());
+        System.out.println("Oldest Person from the addressBook:"+addressBookService.getOldestPersonAddress().firstName);
     }
 }
