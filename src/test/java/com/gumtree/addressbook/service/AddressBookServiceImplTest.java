@@ -53,4 +53,9 @@ public class AddressBookServiceImplTest {
     public void shouldReturnYoungestPersonFromAddressBook() {
         assertEquals("Samantha", addressBookService.getYoungestPersonAddress().firstName);
     }
+
+    @Test
+    public void shouldReturnHowManyDaysOlder() {
+        assertEquals(10, addressBookService.getDaysOlder("Bob","Samantha"));
+    }
 }
