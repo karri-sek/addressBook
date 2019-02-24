@@ -15,4 +15,9 @@ public class CSVFileReadingStrategyTest {
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
         assertTrue(csvReading.isFileExists("src/test/resources/addressBook.csv"));
     }
+    @Test
+    public void shouldReturnFalseForDirectory(){
+        CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
+        assertFalse(csvReading.isFileExists("src/test/resources"));
+    }
 }
