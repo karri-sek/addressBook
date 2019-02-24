@@ -32,6 +32,10 @@ public class ApplicationEntry {
     public void printAllCallsStatstics(){
         System.out.println("No of males from the addressBook:"+addressBookService.getMaleGenderCount());
         System.out.println("No of Females from the addressBook:"+addressBookService.getFemaleGenderCount());
-        System.out.println("Oldest Person from the addressBook:"+addressBookService.getOldestPersonAddress().firstName);
+        Address oldPersonAddress = addressBookService.getOldestPersonAddress();
+        System.out.println("Oldest Person from the addressBook:"+oldPersonAddress.firstName+" "+oldPersonAddress.lastName);
+        System.out.println("No of days Bill Older then Paul from the addressBook:"+addressBookService.getDaysOlder("Bill", "Paul"));
+        System.out.println("No of days Steve Older then Michales from the addressBook:"+addressBookService.getDaysOlder("Steve", "Michales"));
+
     }
 }
