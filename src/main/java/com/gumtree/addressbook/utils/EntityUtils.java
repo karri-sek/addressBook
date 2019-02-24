@@ -6,6 +6,7 @@ import com.gumtree.addressbook.enums.Gender;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class EntityUtils {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
@@ -14,12 +15,12 @@ public class EntityUtils {
    }
 
    public Entity makeEntityFromFileLine(String fileLine, String columnSeparator, String firstLastNameSeparator){
-    String[] fileLineSplit = fileLine.split(columnSeparator);
+    String[] fileLineSplit = Arrays.stream(fileLine.split(columnSeparator)).map(String::trim).toArray(String[]::new);
     String[] firstLastNameSplit = fileLineSplit[0].split(firstLastNameSeparator);
-    String firstName = firstLastNameSplit[0].trim();
-    String lastName = firstLastNameSplit[1].trim();
-    Gender gender = Gender.valueOf(fileLineSplit[1].trim());
-    LocalDate dateOfBirth = getLocalDateFromString(fileLineSplit[2].trim());
+    String firstName = firstLastNameSplit[0];
+    String lastName = firstLastNameSplit[1];
+    Gender gender = Gender.valueOf(fileLineSplit[1]);
+    LocalDate dateOfBirth = getLocalDateFromString(fileLineSplit[2]);
     return new AdressBook(firstName, lastName, gender, dateOfBirth);
    }
 
