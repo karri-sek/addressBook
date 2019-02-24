@@ -51,7 +51,7 @@ public class CSVFileReadingStrategyTest {
     @Test
     public void returnsFailedToMap() {
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
-        assertEquals(0,csvReading.mapFileLinesToEntities(new File("src/test/resources/addressBook.csv")));
+        assertEquals(0,csvReading.mapFileLinesToEntities(new File("src/test/resources/addressBook.cs")));
     }
     @Test
     public void returnsOneForSuccessfulMapping() {

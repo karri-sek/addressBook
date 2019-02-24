@@ -1,11 +1,15 @@
 package com.gumtree.addressbook.readingStrategy.impl;
 
+import com.gumtree.addressbook.entities.Entity;
 import com.gumtree.addressbook.readingStrategy.FileReadingStrategy;
+import com.gumtree.addressbook.utils.EntityUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.stream.Stream;
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
 
 public class CSVFileReadingStrategy implements FileReadingStrategy {
     public static final String SUPPORTED_EXTENSION = "csv";
@@ -30,6 +34,13 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
 
     @Override
     public long mapFileLinesToEntities(File file) {
+        try {
+            List<Entity> listOfAddressBookRecords =  Files.lines(file.toPath()).map(line ->
+                    new EntityUtils().makeEntityFromFileLine(line, CSV_COLUMN_SEPARATOR, CSV_FIRST_LAST_NAME_SEPARATOR)).collect(toList());
+          return listOfAddressBookRecords.size();
+        }catch (IOException ioe){
+            System.out.println(ioe);
+        }
         return 0;
     }
 }
