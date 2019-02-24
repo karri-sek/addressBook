@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Address extends Entity implements  Comparable<Address>{
-    private LocalDate dateOfBirth;
+    public LocalDate dateOfBirth;
     private String addressLine;
     private String postCode;
     private List<Address> addressBookRecords;
