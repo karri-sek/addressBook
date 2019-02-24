@@ -25,6 +25,9 @@ public class AddressBookServiceImplTest {
         listOfAddresses.add((Address) entityUtils.makeEntityFromFileLine("Mark Mat, Male, 16/03/87", ",", " "));
         listOfAddresses.add((Address) entityUtils.makeEntityFromFileLine("Samantha sally, Female, 16/03/89", ",", " "));
         listOfAddresses.add((Address) entityUtils.makeEntityFromFileLine("Bob Robert, Male, 16/03/67", ",", " "));
+        listOfAddresses.add((Address) entityUtils.makeEntityFromFileLine("Alex Right, Male, 16/03/79", ",", " "));
+        listOfAddresses.add((Address) entityUtils.makeEntityFromFileLine("Chris Hudson, Male, 26/03/79", ",", " "));
+
         address.setAddressBookRecords(listOfAddresses);
         addressBookService = new AddressBookServiceImpl(address);
     }
@@ -36,7 +39,7 @@ public class AddressBookServiceImplTest {
 
     @Test
     public void shouldReturnMaleGenderCount() {
-        assertEquals(3, addressBookService.getMaleGenderCount());
+        assertEquals(5, addressBookService.getMaleGenderCount());
     }
 
     @Test
@@ -56,6 +59,11 @@ public class AddressBookServiceImplTest {
 
     @Test
     public void shouldReturnHowManyDaysOlder() {
-        assertEquals(10, addressBookService.getDaysOlder("Bob","Samantha"));
+        assertEquals(8036, addressBookService.getDaysOlder("Bob","Samantha"));
+    }
+
+    @Test
+    public void shouldReturnHowManyDaysOlderAlexByChris() {
+        assertEquals(10, addressBookService.getDaysOlder("Alex","Chris"));
     }
 }
