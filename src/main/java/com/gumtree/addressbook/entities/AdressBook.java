@@ -1,6 +1,6 @@
-package com.gumtree.addressbook.readingStrategy.entities;
+package com.gumtree.addressbook.entities;
 
-import com.gumtree.addressbook.readingStrategy.enums.Gender;
+import com.gumtree.addressbook.enums.Gender;
 
 import java.time.LocalDate;
 import java.util.List;
