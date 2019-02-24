@@ -5,9 +5,13 @@ import com.gumtree.addressbook.readingStrategy.FileReadingStrategy;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.stream.Stream;
 
 public class CSVFileReadingStrategy implements FileReadingStrategy {
-    public String SUPPORTED_EXTENSION = "csv";
+    public static final String SUPPORTED_EXTENSION = "csv";
+    public static final String CSV_COLUMN_SEPARATOR = ",";
+    public static final String CSV_FIRST_LAST_NAME_SEPARATOR=" ";
+
     @Override
     public boolean isFileExists(String path) {
         File inputFile = new File(path);

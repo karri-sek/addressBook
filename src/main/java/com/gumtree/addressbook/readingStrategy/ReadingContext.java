@@ -1,4 +1,4 @@
-package com.gumtree.addressbook.readingStrategy.impl;
+package com.gumtree.addressbook.readingStrategy;
 
 import com.gumtree.addressbook.readingStrategy.FileReadingStrategy;
 
