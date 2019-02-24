@@ -5,6 +5,7 @@ import com.gumtree.addressbook.readingStrategy.FileReadingStrategy;
 import java.io.File;
 
 public class CSVFileReadingStrategy implements FileReadingStrategy {
+    public String SUPPORTED_EXTENSION = "csv";
     @Override
     public boolean isFileExists(String path) {
         File inputFile = new File(path);
@@ -12,6 +13,7 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
     }
     @Override
     public boolean hasCorrectExtension(String path){
-        return false;
+        String extension = path.substring(path.lastIndexOf(".")+1);
+        return extension.equals(SUPPORTED_EXTENSION);
     }
 }
