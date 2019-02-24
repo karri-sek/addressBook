@@ -2,9 +2,10 @@ package com.gumtree.addressbook.service;
 
 import org.junit.Test;
 
-public class AddressBookServiceImpl {
+public class AddressBookServiceImplTest {
+
     @Test
     public void shouldReturnAllGenderCount(){
-        
+
     }
 }
