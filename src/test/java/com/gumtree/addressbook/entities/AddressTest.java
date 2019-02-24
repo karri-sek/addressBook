@@ -1,4 +1,4 @@
-package com.gumtree.addressbook.utils;
+package com.gumtree.addressbook.entities;
 
 import com.gumtree.addressbook.entities.Address;
 import com.gumtree.addressbook.enums.Gender;
