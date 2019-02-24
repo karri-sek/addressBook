@@ -32,24 +32,25 @@ public class AddressBookServiceImplTest {
     @Test
     public void shouldReturnAllGenderCount() {
         assertEquals(2, addressBookService.getAllGenderCount().size());
-
     }
 
     @Test
     public void shouldReturnMaleGenderCount() {
         assertEquals(3, addressBookService.getMaleGenderCount());
-
     }
 
     @Test
     public void shouldReturnFeMaleGenderCount() {
         assertEquals(1, addressBookService.getFemaleGenderCount());
-
     }
 
     @Test
     public void shouldReturnOldestPersonFromAddressBook() {
-        assertEquals("Bob Robert", addressBookService.getOldestPersonAddress().firstName);
+        assertEquals("Bob", addressBookService.getOldestPersonAddress().firstName);
+    }
 
+    @Test
+    public void shouldReturnYoungestPersonFromAddressBook() {
+        assertEquals("Samantha", addressBookService.getYoungestPersonAddress().firstName);
     }
 }
