@@ -3,6 +3,8 @@ package com.gumtree.addressbook.readingStrategy.impl;
 import com.gumtree.addressbook.readingStrategy.FileReadingStrategy;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 public class CSVFileReadingStrategy implements FileReadingStrategy {
     public String SUPPORTED_EXTENSION = "csv";
@@ -18,7 +20,7 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
     }
 
     @Override
-    public int getCountOfLines(File file) {
-        return 0;
+    public long getCountOfLines(File file) throws IOException {
+       return Files.lines(file.toPath()).count();
     }
 }
