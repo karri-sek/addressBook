@@ -65,4 +65,7 @@ public class Address extends Entity implements  Comparable<Address>{
     public void setAddressBookRecords(List<Address> addressBookRecords) {
         this.addressBookRecords = addressBookRecords;
     }
+    public static int compareByDateOfBirth(Address firstAddress, Address secondAddress) {
+        return firstAddress.dateOfBirth.compareTo(secondAddress.dateOfBirth);
+    }
 }
