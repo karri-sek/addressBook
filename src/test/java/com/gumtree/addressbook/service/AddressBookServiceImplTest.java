@@ -9,11 +9,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class AddressBookServiceImplTest {
 
     List<Address> listOfAddresses = new ArrayList<>();
+    AddressBookService addressBookService = new AddressBookServiceImpl();
     @Before
     public void setup() {
+
         EntityUtils entityUtils = new EntityUtils();
         Address address = new Address();
 
@@ -26,7 +30,12 @@ public class AddressBookServiceImplTest {
 
     @Test
     public void shouldReturnAllGenderCount(){
-        
+        assertEquals(2, addressBookService.getAllGenderCount().size());
+
+    }
+    @Test
+    public void shouldReturnMaleGenderCount(){
+        assertEquals(3, addressBookService.getMaleGenderCount());
 
     }
 }
