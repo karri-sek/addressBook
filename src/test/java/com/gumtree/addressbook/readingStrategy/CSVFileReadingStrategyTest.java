@@ -43,4 +43,9 @@ public class CSVFileReadingStrategyTest {
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
         assertEquals(1, csvReading.getCountOfLines(new File("src/test/resources/addressBook.csv")));
     }
+    @Test(expected = IOException.class)
+    public void shouldReturnIOException() throws IOException {
+        CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
+        csvReading.getCountOfLines(new File("src/test/resources/addressBook.dsv"));
+    }
 }
