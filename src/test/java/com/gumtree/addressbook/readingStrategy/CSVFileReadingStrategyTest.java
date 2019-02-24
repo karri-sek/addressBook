@@ -2,6 +2,9 @@ package com.gumtree.addressbook.readingStrategy;
 
 import com.gumtree.addressbook.readingStrategy.impl.CSVFileReadingStrategy;
 import org.junit.Test;
+
+import java.io.File;
+
 import static org.junit.Assert.*;
 public class CSVFileReadingStrategyTest {
 
@@ -32,5 +35,11 @@ public class CSVFileReadingStrategyTest {
     public void shouldReturnTrueForCorrectFileExtension(){
         CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
         assertTrue(csvReading.hasCorrectExtension("src/test/resources/addressBook.csv"));
+    }
+
+    @Test
+    public void shouldReturnCountOfLinesFromFile(){
+        CSVFileReadingStrategy csvReading = new CSVFileReadingStrategy();
+        assertEquals(1, csvReading.getCountOfLines(new File("src/test/resources/addressBook.csv")));
     }
 }

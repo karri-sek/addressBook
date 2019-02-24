@@ -16,4 +16,9 @@ public class CSVFileReadingStrategy implements FileReadingStrategy {
         String extension = path.substring(path.lastIndexOf(".")+1);
         return extension.equals(SUPPORTED_EXTENSION);
     }
+
+    @Override
+    public int getCountOfLines(File file) {
+        return 0;
+    }
 }
