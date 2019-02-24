@@ -40,4 +40,10 @@ public class AddressBookServiceImplTest {
         assertEquals(3, addressBookService.getMaleGenderCount());
 
     }
+
+    @Test
+    public void shouldReturnFeMaleGenderCount() {
+        assertEquals(1, addressBookService.getFemaleGenderCount());
+
+    }
 }
