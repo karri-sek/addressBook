@@ -1,6 +1,6 @@
 package com.gumtree.addressbook.utils;
 
-import com.gumtree.addressbook.entities.AdressBook;
+import com.gumtree.addressbook.entities.Address;
 import com.gumtree.addressbook.entities.Entity;
 import com.gumtree.addressbook.enums.Gender;
 
@@ -21,7 +21,7 @@ public class EntityUtils {
     String lastName = firstLastNameSplit[1];
     Gender gender = Gender.valueOf(fileLineSplit[1]);
     LocalDate dateOfBirth = getLocalDateFromString(fileLineSplit[2]);
-    return new AdressBook(firstName, lastName, gender, dateOfBirth);
+    return new Address(firstName, lastName, gender, dateOfBirth);
    }
 
 }
