@@ -2,9 +2,11 @@ package com.gumtree.addressbook.service;
 
 import com.gumtree.addressbook.entities.Address;
 
+import java.util.List;
+
 public interface AddressBookService {
 
-    long getAllGenderCount();
+    List<String> getAllGenderCount();
     long getMaleGenderCount();
     long getFemaleGenderCount();
 
