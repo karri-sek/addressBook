@@ -38,6 +38,6 @@ public class AddressBookServiceImpl implements AddressBookService {
 
     @Override
     public Address getOldestPersonAddress() {
-        return null;
+        return new Address();
     }
 }

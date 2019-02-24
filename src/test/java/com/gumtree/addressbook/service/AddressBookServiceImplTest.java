@@ -46,4 +46,10 @@ public class AddressBookServiceImplTest {
         assertEquals(1, addressBookService.getFemaleGenderCount());
 
     }
+
+    @Test
+    public void shouldReturnOldestPersonFromAddressBook() {
+        assertEquals("Bob Robert", addressBookService.getOldestPersonAddress().firstName);
+
+    }
 }
