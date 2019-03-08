@@ -3,8 +3,12 @@ package com.gumtree.addressbook.service;
 import com.gumtree.addressbook.entities.Address;
 import com.gumtree.addressbook.enums.Gender;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class AddressBookServiceImpl implements AddressBookService {
     private Address address;
@@ -33,11 +37,23 @@ public class AddressBookServiceImpl implements AddressBookService {
 
     @Override
     public long getDaysOlder(String firstPersonName, String secondPersonName) {
-        return 0;
+            LocalDate firstPersonDateOfBirth = getAddressfromName(firstPersonName).dateOfBirth;
+            LocalDate secondPersonDateOfBirth = getAddressfromName(secondPersonName).dateOfBirth;
+            long diff = ChronoUnit.DAYS.between(firstPersonDateOfBirth, secondPersonDateOfBirth);
+        return diff;
     }
 
     @Override
     public Address getOldestPersonAddress() {
-        return new Address();
+        return address.getAddressBookRecords().stream().min(Address::compareByDateOfBirth).get();
+    }
+
+    @Override
+    public Address getYoungestPersonAddress() {
+        return address.getAddressBookRecords().stream().max(Address::compareByDateOfBirth).get();
+    }
+
+    private Address getAddressfromName(String firstName) {
+        return address.getAddressBookRecords().stream().filter(a -> firstName.equals(a.firstName)).findFirst().get();
     }
 }
