@@ -60,6 +60,10 @@ public class Address extends Entity implements  Comparable<Address>{
         return this.firstName.compareTo(other.firstName);
     }
 
+    public static int compareByDOB(Address firstAddress, Address secondAddress) {
+        return firstAddress.dateOfBirth.compareTo(secondAddress.dateOfBirth);
+    }
+
     public List<Address> getAddressBookRecords() {
         return addressBookRecords;
     }
